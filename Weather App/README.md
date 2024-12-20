@@ -4,7 +4,7 @@
 
 This Weather Dashboard is a comprehensive React-based web application designed to provide real-time weather information across multiple cities. The project was developed as a practical exercise in React state management, API integration, and responsive web design.
 
-## Project Screenshots
+## Project Screenshots  
 
 ### Main Dashboard Interface
 ![Dashboard Main View](./screenshots/Dashboard.png)
@@ -149,11 +149,6 @@ Recommended platforms:
 - Netlify
 - GitHub Pages
 
-## License
-
-[Specify Your License - e.g., MIT]
-
 ## Contact & Collaboration
-
 Aditya Mishra
 adityadevansh2002@gmail.com

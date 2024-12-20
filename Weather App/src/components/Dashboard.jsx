@@ -125,10 +125,10 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="bg-blue-200 col-span-1 flex justify-center px-10">
-        <div className="w-full h-1/2 mt-8 flex flex-col items-center gap-y-6">
+      <div className="bg-blue-200 col-span-1 flex justify-center px-4 md:px-10">
+        <div className="w-full h-auto md:h-1/2 mt-8 flex flex-col items-center gap-y-6">
           <button
-            className="px-16 py-3 rounded-md text-white active:scale-95 duration-100 bg-blue-600"
+            className="px-8 md:px-16 py-3 rounded-md text-white active:scale-95 duration-100 bg-blue-600"
             onClick={() => handleClick("Get Weather")}
           >
             Get Weather
@@ -157,23 +157,23 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
-      <div className="bg-indigo-200 col-span-4 border-l-4 border-l-black flex flex-col items-center gap-y-8 px-16">
-        <div className="mt-8 w-full h-fit flex justify-end">
+      <div className="bg-indigo-200 col-span-1 md:col-span-4 border-l-0 md:border-l-4 border-l-black flex flex-col items-center gap-y-8 px-4 md:px-16">
+        <div className="mt-8 w-full h-fit flex flex-col md:flex-row justify-center md:justify-end items-center md:items-start gap-y-4">
           <input
             type="text"
             placeholder="Enter your City"
             value={searchCity}
-            className="w-2/5 px-2 py-4 rounded-tl-md rounded-bl-md"
+            className="w-full md:w-2/5 px-2 py-4 rounded-tl-md rounded-bl-md"
             onChange={(e) => setSearchCity(e.target.value)}
           />
           <button
-            className="px-12 py-4 bg-blue-600 rounded-tr-md rounded-br-md"
+            className="px-8 md:px-12 py-4 bg-blue-600 rounded-tr-md rounded-br-md"
             onClick={() => handleClick(null, searchCity)}
           >
             <FontAwesomeIcon icon={faSearch} className="text-white mr-2" />
           </button>
         </div>
-        <div className="w-full">
+        <div className="w-full overflow-x-auto">
           <table className="min-w-full table-auto border-separate border border-gray-300 shadow-md">
             <thead className="bg-blue-600 text-white">
               <tr>
@@ -200,7 +200,7 @@ const Dashboard = () => {
                 <tr>
                   <td
                     colSpan="6"
-                    className="text-center py-4 text-2xl font-bold"
+                    className="text-center py-4 text-xl md:text-2xl font-bold"
                   >
                     No data
                   </td>
