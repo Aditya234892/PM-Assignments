@@ -20,7 +20,7 @@ This Crypto Capital Gains Tax Calculator is a React-based web application design
    - Support for long-term and short-term investments
 
 
-2.**Tax Rate Determination**
+2. **Tax Rate Determination**
    - Automatic tax rate calculation based on annual income
    - Applies Australian tax brackets
    - Provides 50% discount for long-term investments
@@ -115,7 +115,7 @@ const getTaxRate = (income) => {
 ## Installation
 ```bash 
 # Clone the repository
-git clone https://your-repo-url.git
+git clone https://github.com/Aditya234892/PM-Assignments.git
 
 # Navigate to project directory
 cd crypto-tax-calculator
