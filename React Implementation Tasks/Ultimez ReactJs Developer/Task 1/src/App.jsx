@@ -7,29 +7,48 @@ function App() {
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const [errors, setErrors] = useState({ productName: "", productPrice: "" });
+
   const handleSubmit = () => {
-    if (productName && productPrice) {
-      const price = parseFloat(productPrice);
-      if (!isNaN(price)) {
-        setProducts((prev) => [...prev, { name: productName, price }]);
-        setTotalPrice((prev) => prev + price);
-        setProductName("");
-        setProductPrice("");
-      } else {
-        alert("Please enter a valid number for the product price.");
-      }
-    } else {
-      alert("Both fields are required.");
+    let hasError = false;
+    const newErrors = { productName: "", productPrice: "" };
+
+    if (!productName) {
+      newErrors.productName = "Product Name is required.";
+      hasError = true;
     }
+
+    if (!productPrice) {
+      newErrors.productPrice = "Product Price is required.";
+      hasError = true;
+    } else {
+      const price = parseFloat(productPrice);
+      if (isNaN(price)) {
+        newErrors.productPrice = "Please enter a valid number for Product Price.";
+        hasError = true;
+      }
+    }
+
+    if (hasError) {
+      setErrors(newErrors);
+      return;
+    }
+
+    const price = parseFloat(productPrice);
+    setProducts((prev) => [...prev, { name: productName, price }]);
+    setTotalPrice((prev) => prev + price);
+    setProductName("");
+    setProductPrice("");
+    setErrors({ productName: "", productPrice: "" });
   };
 
   return (
     <div className="container">
       <div>
-      <h1 className='head'>Task - 1</h1>
-      <p className="heading">
-        Storing the input data with Product Name and Product Price as an object into an array, displaying that list data, and calculating the total Product Price using JavaScript.
-      </p>
+        <h1 className='head'>Task - 1</h1>
+        <p className="heading">
+          Storing the input data with Product Name and Product Price as an object into an array, displaying that list data, and calculating the total Product Price using JavaScript.
+        </p>
       </div>
       <div className="inputs">
         <div className="input_1">
@@ -40,6 +59,7 @@ function App() {
             value={productName}
             onChange={(e) => setProductName(e.target.value)}
           />
+          {errors.productName && <p className='error'>{errors.productName}</p>}
         </div>
 
         <div className="input_1">
@@ -50,6 +70,7 @@ function App() {
             value={productPrice}
             onChange={(e) => setProductPrice(e.target.value)}
           />
+          {errors.productPrice && <p className='error'>{errors.productPrice}</p>}
         </div>
 
         <button onClick={handleSubmit} className='submitBtn'>Submit</button>
