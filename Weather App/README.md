@@ -130,10 +130,10 @@ const handleClick = (state, city = null) => {
 
 ```bash
 # Clone the repository
-git clone https://your-repo-url.git
+git clone https://github.com/Aditya234892/PM-Assignments.git
 
 # Navigate to project directory
-cd weather-dashboard
+cd weather-app
 
 # Install dependencies
 npm install
