@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-    // State to track toggled cards
     const [toggledCards, setToggledCards] = useState({});
 
     const handleCardClick = (index) => {
         setToggledCards((prevState) => ({
             ...prevState,
-            [index]: !prevState[index], // Toggle the state of the clicked card
+            [index]: !prevState[index],
         }));
     };
 
